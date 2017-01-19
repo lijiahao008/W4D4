@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h1><%= @track.name %></h1>
+  <p><%= ugly_lyrics(@track.lyrics) %></p>
+  <p><a class="btn btn-primary btn-lg" href="<%= album_url(@track.album.id) %>" role="button"><%= @track.album.title %></a></p>
+</div>
+
+<p>
+  <strong>Bonus or regular:</strong>
+  <%= @track.bonus_or_regular %>
+</p>
+
+<p>
+  <strong>Notes: </strong>
+  <br>
+  <% unless @track.notes.empty?  %>
+    <% @track.notes.each do |note| %>
+      <%= render 'notes/note', note: note %>
+    <% end %>
+  <% else  %>
+    <strong>No notes yet.</strong>
+  <% end  %>
+</p>
+
+<p>
+  <strong>New Note: </strong>
+  <%= render "notes/form", note: @note %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>

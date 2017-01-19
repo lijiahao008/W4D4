@@ -1,0 +1,21 @@
+
+<p>
+  <strong>Name: </strong>
+  <%= @band.name %>
+</p>
+
+<p>
+  <strong>Albums: </strong>
+  <br>
+  <% unless @band.albums.empty? %>
+    <% @band.albums.each do |album| %>
+      <%= album.title %>
+      <br>
+    <% end %>
+  <% else %>
+    <strong>This band is too lazy.</strong>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>

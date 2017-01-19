@@ -1,0 +1,11 @@
+<strong>Note body: </strong>
+<%= note.body %>
+<br>
+<strong>From: </strong>
+<%= note.user.user_name %>
+<br>
+<% debugger %>
+<% if current_user.id == note.user_id %>
+  <%= link_to 'Delete this note', track_note_url(@track.id, note.id), class: "btn btn-xs btn-danger", method: "delete" %><br>
+<% end %>
+<br>

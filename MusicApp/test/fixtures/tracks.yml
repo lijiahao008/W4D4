@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: tracks
+#
+#  id               :integer          not null, primary key
+#  name             :string
+#  bonus_or_regular :string
+#  lyrics           :text
+#  album_id         :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  bonus_or_regular: MyString
+  lyrics: MyText
+  album_id: 1
+
+two:
+  name: MyString
+  bonus_or_regular: MyString
+  lyrics: MyText
+  album_id: 1

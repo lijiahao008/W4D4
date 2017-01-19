@@ -1,0 +1,19 @@
+
+
+<p>
+  <strong>Live or studio:</strong>
+  <%= @album.live_or_studio %>
+</p>
+
+<p>
+  <strong>Band:</strong>
+  <%= @album.band.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

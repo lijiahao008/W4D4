@@ -1,0 +1,28 @@
+
+<h1>Tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lyrics</th>
+      <th>Album</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= link_to track.name, track %></td>
+        <td><%= track.lyrics %></td>
+        <td><%= track.album.title %></td>
+        <td><%= link_to 'Edit', edit_track_path(track), class: "btn btn-xs btn-warning" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Track', new_track_path, class: "btn btn-success" %>
